@@ -6,31 +6,31 @@ using std::stringstream;
 
 const Position& Rover::getPosition() const
 {
-	return currentPosition;
+	return landPosition;
 }
 
 const Direction& Rover::getDirection() const
 {
-	return currentDirection;
+	return landDirection;
 }
 
 void Rover::landOn(const Plateau& plateau,
 		           const Position& landedPosition,
 		           const Direction& landedDirection)
 {
-	this->currentDirection = landedDirection;
-	this->currentPosition = landedPosition;
-	this->landedPlateau = plateau;
+	this->landDirection = landedDirection;
+	this->landPosition = landedPosition;
+	this->landPlateau = plateau;
 }
 
 void Rover::moveTo(const Position& destination)
 {
-	currentPosition = destination;
+	landPosition = destination;
 }
 
 void Rover::turnTo(const Direction& direction)
 {
-	currentDirection = direction;
+	landDirection = direction;
 }
 
 void Rover::execute(const Instruction& instr)

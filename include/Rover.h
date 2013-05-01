@@ -16,9 +16,9 @@ class Rover
 {
 public:
 
-	Rover():currentPosition(Position(0 ,0)),
-			currentDirection(Direction::N()),
-			landedPlateau(Plateau(0, 0)){}
+	Rover():landPosition(Position(0 ,0)),
+			landDirection(Direction::N()),
+			landPlateau(Plateau(0, 0)){}
 
 	void landOn(const Plateau& plateau,
 			    const Position& landedPosition = Position(0, 0),
@@ -39,9 +39,9 @@ private:
 	void moveTo(const Position& destination);
 	void turnTo(const Direction& direction);
 
-	Position currentPosition;
-	Direction currentDirection;
-	Plateau landedPlateau;
+	Position landPosition;
+	Direction landDirection;
+	Plateau landPlateau;
 };
 
 #endif

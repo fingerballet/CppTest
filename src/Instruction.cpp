@@ -13,5 +13,5 @@ void InstructionR::control(Rover& rover) const
 
 void InstructionM::control(Rover& rover) const
 {
-	rover.moveTo(rover.landedPlateau.getNextPosition(rover.getPosition(), rover.getDirection()));
+	rover.moveTo(rover.landPlateau.getNextPosition(rover.getPosition(), rover.getDirection()));
 }
