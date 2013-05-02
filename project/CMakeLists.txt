@@ -20,24 +20,24 @@ project(CppTest)
 
 include_directories(
 	"../include"
-	"../test"
-	"../external/include"
+	"../test/include"
+	"../test/tools/include"
 )
 
-link_directories("/home/administrator/workspace/github/CppTest/CppTest/external/lib")
+link_directories("/home/administrator/workspace/github/CppTest/CppTest/test/tools/lib")
 
 file(GLOB_RECURSE code_headers ../include/*.h)
-file(GLOB_RECURSE test_headers ../test/*.h)
-file(GLOB_RECURSE external_headers ../external/include/*.h)
+file(GLOB_RECURSE test_headers ../test/include/*.h)
+file(GLOB_RECURSE tools_headers ../test/tools/include/*.h)
 file(GLOB_RECURSE code_source ../src/*.cpp)
-file(GLOB_RECURSE test_source ../test/*.cpp)
+file(GLOB_RECURSE test_source ../test/src/*.cpp)
 
 #aux_source_directory(${code_source} CODE_SOURCE_LIST)
 #aux_source_directory(${test_source} TEST_SOURCE_LIST)
 
 add_definitions(-D__UNIT_TEST__)
 
-set(ALL_FILES ${code_headers} ${test_headers} ${external_headers} ${code_source} ${test_source})
+set(ALL_FILES ${code_headers} ${test_headers} ${tools_headers} ${code_source} ${test_source})
 
 source_group_by_dir(ALL_FILES)
 
